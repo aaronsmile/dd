@@ -8,7 +8,7 @@ while [[ $# -ge 1 ]]; do
       shift
       ;;
     *)
-      echo -ne " Usage:\n\tbash $0\t-p/--password (default P@$$w0rd) \n"
+      echo -ne " Usage:\n\tbash $0\t-p/--password (default PassW0rd) \n"
       exit 1;
       ;;
     esac
@@ -111,7 +111,7 @@ install
 # Use network installation
 url --url="http://mirrors.bclinux.org/bclinux/el6/os/x86_64/"
 # Root password
-rootpw --plaintext P@$$w0rd
+rootpw --plaintext PassW0rd
 # System authorization information
 auth  --useshadow  --passalgo=sha512
 # Use graphical install

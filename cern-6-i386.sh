@@ -17,12 +17,12 @@ while [[ $# -ge 1 ]]; do
 [ $EUID -ne 0 ] && echo "Error:This script must be run as root!" && exit 1
 
 [ -n $WDtmp ] && myPASSWORD="$WDtmp"
-[ -z $myPASSWORD ] && myPASSWORD='P@$$w0rd'
+[ -z $myPASSWORD ] && myPASSWORD='PassW0rd'
 
 clear && echo -e "\n\033[36m# Install\033[0m\n"
 
 echo -e "\n[\033[33m$vDEB\033[0m] [\033[33m$VER\033[0m] Downloading..."
-CentOSMirror="http://sunsite.icm.edu.pl/pub/Linux/dist/slc/slc6X/i386/isolinux"
+CentOSMirror="http://linuxsoft.cern.ch/cern/slc6X/i386/isolinux"
 mkdir -p /ddreinst
 wget --no-check-certificate -qO '/ddreinst/initrd.img' "$CentOSMirror/initrd.img"
 [ $? -ne '0' ] && echo -ne "\033[31mError! \033[0mDownload 'initrd.img' failed! \n" && exit 1
@@ -109,9 +109,9 @@ firewall --disabled
 # Install OS instead of upgrade
 install
 # Use network installation
-url --url="http://sunsite.icm.edu.pl/pub/Linux/dist/slc/slc6X/i386/"
+url --url="http://linuxsoft.cern.ch/cern/slc6X/i386/"
 # Root password
-rootpw --plaintext P@$$w0rd
+rootpw --plaintext PassW0rd
 # System authorization information
 auth  --useshadow  --passalgo=sha512
 # Use graphical install

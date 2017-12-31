@@ -8,7 +8,7 @@ while [[ $# -ge 1 ]]; do
       shift
       ;;
     *)
-      echo -ne " Usage:\n\tbash $0\t-p/--password (default P@$$w0rd) \n"
+      echo -ne " Usage:\n\tbash $0\t-p/--password (default PassW0rd) \n"
       exit 1;
       ;;
     esac
@@ -22,7 +22,7 @@ while [[ $# -ge 1 ]]; do
 clear && echo -e "\n\033[36m# Install\033[0m\n"
 
 echo -e "\n[\033[33m$vDEB\033[0m] [\033[33m$VER\033[0m] Downloading..."
-CentOSMirror="http://sunsite.icm.edu.pl/pub/Linux/dist/scientificlinux/7/x86_64/os/isolinux"
+CentOSMirror="http://ftp.scientificlinux.org/linux/scientific/7/x86_64/os/isolinux"
 mkdir -p /ddreinst
 wget --no-check-certificate -qO '/ddreinst/initrd.img' "$CentOSMirror/initrd.img"
 [ $? -ne '0' ] && echo -ne "\033[31mError! \033[0mDownload 'initrd.img' failed! \n" && exit 1
@@ -109,9 +109,9 @@ firewall --disabled
 # Install OS instead of upgrade
 install
 # Use network installation
-url --url="http://sunsite.icm.edu.pl/pub/Linux/dist/scientificlinux/7/x86_64/os/"
+url --url="http://ftp.scientificlinux.org/linux/scientific/7/x86_64/os/"
 # Root password
-rootpw --plaintext P@$$w0rd
+rootpw --plaintext PassW0rd
 # System authorization information
 auth  --useshadow  --passalgo=sha512
 # Use graphical install
